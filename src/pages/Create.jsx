@@ -1,11 +1,12 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import { useFetch } from "../hooks/useFetch";
 
 
 function Create() {
   const { data, isPending, error, newData } = useFetch(
-    "https://feline-carpal-can.glitch.me/recipes/",
+    "https://feline-carpal-can.glitch.me/recipes",
     "POST"
   );
   const [title, setTitle] = useState("");
@@ -28,15 +29,16 @@ function Create() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    newData({
-      title,
+    newData ({
+      title: "Title",
       cookingTime: `${cookingTime} minutes`,
       img,
       method,
-      id: uuidv4(),
-      ingredients,
+      id: "ID",
+      ingredients
     });
-    toast.success("New recipie added seccessfuly");
+    
+   
   };
 
   return (
