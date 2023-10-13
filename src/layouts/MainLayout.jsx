@@ -1,18 +1,19 @@
+// components
 import { Outlet } from "react-router-dom";
-import Navbar from "../components/navbar";
-import { FaSun, FaMoon } from "react-icons/fa6";
-import { useState } from "react";
-import Icons from "../components/Icons";
+import Navbar from "../components/Navbar";
+import BreadCrumbs from "../components/BreadCrumbs";
+import ColorContainer from "../components/ColorContainer";
 
 function MainLayout() {
   return (
-    <div>
+    <>
       <Navbar />
-      <Icons />
+      <BreadCrumbs />
+      <ColorContainer />
       <main className="align-element py-8">
         <Outlet />
       </main>
-    </div>
+    </>
   );
 }
 

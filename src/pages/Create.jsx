@@ -3,7 +3,6 @@ import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { useFetch } from "../hooks/useFetch";
 
-
 function Create() {
   const { data, isPending, error, newData } = useFetch(
     "https://feline-carpal-can.glitch.me/recipes",
@@ -29,16 +28,14 @@ function Create() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    newData ({
+    newData({
       title: "Title",
       cookingTime: `${cookingTime} minutes`,
       img,
       method,
       id: "ID",
-      ingredients
+      ingredients,
     });
-    
-   
   };
 
   return (
@@ -77,7 +74,7 @@ function Create() {
             />
             <button
               onClick={addIngredient}
-              className="btn btn-outline btn-secondary"
+              className="btn btn-outline btn-neutral"
             >
               Add
             </button>
@@ -126,7 +123,7 @@ function Create() {
             value={method}
           ></textarea>
         </div>
-        <button className="btn btn-outline btn-secondary w-80">Create</button>
+        <button className="btn btn-outline btn-neutral w-80">Create</button>
       </form>
     </div>
   );

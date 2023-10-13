@@ -1,17 +1,20 @@
-import { createBrowserRouter,RouterProvider, Routes } from "react-router-dom";
-import MainLayout from "./layouts/MainLayout";
-import { Children } from "react";
+// rrd imports
+import { createBrowserRouter, RouterProvider, Routes } from "react-router-dom";
+
+//pages
 import Home from "./pages/Home";
 import Create from "./pages/Create";
 import Recipie from "./pages/Recipie";
 import Error from "./pages/Error";
+
+//layouts
+import MainLayout from "./layouts/MainLayout";
 
 function App() {
   const routes = createBrowserRouter([
     {
       path: "/",
       element: <MainLayout />,
-      errorElement:<Error/>,
       children: [
         {
           index: true,
@@ -28,7 +31,8 @@ function App() {
       ],
     },
   ]);
-  return <RouterProvider router={routes}/>
+
+  return <RouterProvider router={routes} />;
 }
 
 export default App;

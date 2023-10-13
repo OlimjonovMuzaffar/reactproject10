@@ -29,7 +29,7 @@ function Recipie() {
               <span className="font-bold">Ingredients:</span>{" "}
               {recipie.ingredients}
             </p>
-            <NavLink className="btn btn-outline btn-succes mt-4" to="/">
+            <NavLink className="btn btn-outline btn-neutral mt-4" to="/">
               Go Recipie
             </NavLink>
           </div>

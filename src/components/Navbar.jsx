@@ -1,20 +1,19 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import { useThemeContext } from "../hooks/useThemeContext";
 
 function Navbar() {
+  const { color } = useThemeContext();
   return (
-    <div className="align-element">
-      <div className="bg-neutral-content">
-        <div className="align-element flex justify-between items-center py-3">
-          <h1 className="text-3xl">
-            <Link to="/">Recipie</Link>
-          </h1>
-          <Link className="btn btn-outline-primary" to="/create">
-            Create
-          </Link>
-        </div>
+    <nav style={{ backgroundColor: color } }>
+      <div className="align-element flex justify-between items-center py-3">
+        <Link className="text-3xl" to="/">
+          Recipie
+        </Link>
+        <Link className="btn btn-neutral" to="/create">
+          Create
+        </Link>
       </div>
-    </div>
+    </nav>
   );
 }
 
